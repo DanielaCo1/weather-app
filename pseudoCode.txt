@@ -1,0 +1,33 @@
+- user ecrit le nom de la ville dans l'input
+- user clic sur Submit
+--------------------------------------------
+connecter input->submit
+    ajouter un event sur submit
+        city = chercher la valeur de l'input
+        url = generateUrl(city)
+        data = fetch(url)
+        renderScreen(data)
+
+        
+
+
+
+
+
+
+
+renderScreen(data){
+    
+}
+
+ generateUrl(city){
+
+
+    return .....city.......
+ }
+
+
+getJsonData(url){
+    url = "https://api.openweathermap.org/data/2.5/weather?q="+ url +"&lang=fr&appid=decdf084054a5691c57a842fab46f209
+}
+
