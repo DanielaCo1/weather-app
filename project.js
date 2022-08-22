@@ -25,14 +25,36 @@ let weather
 let getWeather
 
 
-function displayForecast(datas){
+// function displayForecast(datas){
     
-    let weatherList = datas.list;
+//     let weatherList = datas.list;
+  
+    
+//     for (let i =0; i <weatherList.length; i++) {
+//         let day = new Date(weatherList[i].dt_txt);
+        
+//         //console.log(weatherList[i]);
+//         //console.log(day.getDay());
+//         if(day.getHours()==12){
+//             console.log(weatherList[i]);
+//      }
+//     }
+// } 
 
-    for (let i =0; i <weatherList.length; i++) {
-        console.log(weatherList[i]);
-    }
+
+function displayForecast(datas){
+
+
+
+    `
+    <div class="card-one__forecast">
+        <section class="today" id="current-temp">
+        <img src="" alt ="" class="w-icon">
+        <section class="degree"></section>
+    </div> `
 }
+
+
 function displayWeather(datas){ 
     ///console.log(datas);
 
@@ -73,7 +95,7 @@ function displayWeather(datas){
 
     //Display Wind
     section=document.querySelector(".wind");
-    section.innerHTML = "Wind speed: " + " " + speed;
+    section.innerHTML = "Wind speed:" + " " + speed + " " +  "km/h" ;
     console.log(speed);
 
     //Display Humidity
