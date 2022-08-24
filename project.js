@@ -25,37 +25,54 @@ let weather
 let getWeather
 
 
-function displayForecast(datas){
-    
-    let weatherList = datas.list;
-  
-    
-    for (let i =0; i <weatherList.length; i++) {
-        let day = new Date(weatherList[i].dt_txt);
-        
-        //console.log(weatherList[i]);
-        //console.log(day.getDay());
-        if(day.getHours()==12){
-            console.log(weatherList[i]);
-     }
-    }
- } 
 
 
+/**
+* Create the Weather list Forecast ( 5 days);
+* @param {object} datas an objec
+*/
 function displayForecast(datas){
     let weatherList = datas.list;
     let div=document.querySelector(".card-one__forecast");
-    div.innerHTML = 
-        .map(datas.list)=>{
-            `
-        <div class="card-one__forecast">
-            <section class="today" id="current-temp">
-            <img src="" alt ="" class="w-icon">
-            <section class="degree"></section>
-        </div> 
-        `
-    }
+    
+    let day = [
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat"
+    ];
 
+    div = document.createElement("div");
+    div.classList.add("card-one__forecast");
+    div.innerHTML = weatherList.map((weatherElm)=>{
+        let hours = new Date(weatherElm.dt_txt).getHours();
+        if ( hours === 12){
+
+            let date = new Date(weatherElm.dt_txt).getDay();
+            let dayName = day[date];
+            let imgName = weatherElm.weather[0].icon; 
+            let imgPath = "http://openweathermap.org/img/wn/"+imgName+"@2x.png";
+            let degrees =weatherElm.main.temp;
+            degrees = parseInt(degrees);
+  
+            return `
+                <section class="current-day" id="current-temp">
+                    <div class="day">${dayName}</div>                
+                    <img src="${imgPath}" alt ="" class="w-icon">
+                    <div class="degree">${degrees}° C</div>
+                </section>
+            `
+            
+        } 
+    let main = document.querySelector(".container");
+    main.appendChild(div);
+    }).join('');
+};
+
+displayForecast()
 
 
 
@@ -80,7 +97,7 @@ function displayWeather(datas){
     //Display temperature
     section = document.querySelector(".degrees");
     let degree = datas.main.feels_like;
-    degree = parseInt(degree) - 273; 
+    degree = parseInt(degree); 
     section.innerHTML = degree+"°" + " " + "C";
     
     //Display weather icon
@@ -120,7 +137,7 @@ function generateUrl(city, type){//genera l'url che va a cercare il file json e 
         url += "forecast?q=" 
     }
     url += city 
-    url += "&lang=fr&appid=decdf084054a5691c57a842fab46f209";  //Add this &units=metric 
+    url += "&units=metric&lang=fr&appid=decdf084054a5691c57a842fab46f209";
     console.log(url)
     return url;
 }

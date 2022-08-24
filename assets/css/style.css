@@ -9,6 +9,7 @@ body {
 
 .container {
   margin: 0 auto;
+  text-align: center;
 }
 
 .card-one {
@@ -70,13 +71,11 @@ hr {
 
 .card-one__forecast {
   display: flex;
+  justify-content: space-between;
   background-color: black;
   opacity: 0.7;
   border: 2px solid bisque;
-  width: 100%;
-  max-width: 420px;
-  margin-top: 20px;
-  margin-left: 9px;
+  width: 80%;
   border-radius: 20px;
   margin: 0 auto;
 }

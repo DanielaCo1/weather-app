@@ -10,6 +10,7 @@ body {
 
 .container {
     margin: 0 auto;
+    text-align: center;
 } 
 
 .card-one {
@@ -68,32 +69,19 @@ body {
                 padding-top: 25px;
                 padding-left: 15px;
             }
-    
-            .icon {}
-
-        // .card-one__secondSection {
-        //     display: flex;
-        //     //justify-content: center;
-        //     text-align:left;
-        //     background-color: #2C79C1;
-        //     width: 339px;
-        //     margin-top: 20px;
-        //     margin-left: 9px;
-        //     border-radius: 20px;
-        // }
         
 
         .card-one__forecast {  
             display: flex;
+            justify-content: space-between;
             background-color:black;
             opacity: 0.7;
             border: 2px solid bisque;
-            width: 100%;
-            max-width: 420px;
-            margin-top: 20px;
-            margin-left: 9px;
+            width: 80%;
+            //max-width: 420px;
             border-radius: 20px;
             margin: 0 auto;
+            
         }
 
     
